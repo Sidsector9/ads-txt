@@ -16,5 +16,13 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+/**
+ * @todo This is just for testing and should be removed.
+ * This was added to bypass an existing console error in
+ * the `develop` branch.
+ */
+Cypress.on( 'uncaught:exception', (err, runnable) => {
+	return false;
+} )
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

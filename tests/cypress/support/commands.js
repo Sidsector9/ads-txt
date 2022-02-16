@@ -82,10 +82,25 @@ Cypress.Commands.add( 'openDocumentSettingsPanel', ( name ) => {
 		} );
 } );
 
-Cypress.Commands.add( 'setPermalinkStructure', ( type ) => {
-	cy.visitAdminPage( `options-permalink.php` );
-	cy.get( '#permalink_structure' ).click().type("{selectall}").type( type );
-	cy.screenshot('1');
-	cy.get( '#submit' ).click();
-	cy.screenshot('2');
+Cypress.Commands.add( 'saveSettings', () => {
+	cy
+		.get( '#submit' )
+		.click();
+} );
+
+Cypress.Commands.add( 'logout', () => {
+	cy
+		.get( '#wp-admin-bar-logout > a' )
+		.invoke( 'attr', 'href' )
+		.then( href => {
+			cy.visit( href );
+		} );
+} );
+
+Cypress.Commands.add( 'setPermalink', () => {
+	cy.visitAdminPage( 'options-permalink.php' );
+	cy
+		.get( 'form[action="options-permalink.php"] input[type="radio"]' )
+		.eq(4)
+		.check();
 } );

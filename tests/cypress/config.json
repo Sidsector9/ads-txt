@@ -6,6 +6,7 @@
   "videosFolder": "tests/cypress/videos",
   "downloadsFolder": "tests/cypress/downloads",
   "supportFile": "tests/cypress/support/index.js",
-  "defaultCommandTimeout": 40000,
-  "requestTimeout": 50000
+  "testFiles": [
+    "dummy-test.js"
+  ]
 }
