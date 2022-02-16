@@ -1,6 +1,7 @@
 describe( 'Visit front end', () => {
 	before( () => {
 		cy.setPermalink();
+		cy.saveSettings();
 	} );
 
 	it( 'Open hello-world', () => {
