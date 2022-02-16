@@ -85,8 +85,7 @@ Cypress.Commands.add( 'openDocumentSettingsPanel', ( name ) => {
 Cypress.Commands.add( 'setPermalinkStructure', ( type ) => {
 	cy.visitAdminPage( `options-permalink.php` );
 	cy.get( '#permalink_structure' ).click().type("{selectall}").type( type );
+	cy.screenshot('1');
 	cy.get( '#submit' ).click();
-	cy.visitAdminPage( `options-permalink.php` );
-	cy.get( 'h1' ).should("have.text", "Permalink Settings");
-	cy.get( '#permalink_structure' ).should("have.value", type);
+	cy.screenshot('2');
 } );

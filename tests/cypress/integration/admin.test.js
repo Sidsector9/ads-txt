@@ -4,6 +4,7 @@ describe("Admin can login and make sure plugin is activated", () => {
   });
 
   it("Permalink structure works", () => {
+    cy.screenshot('3')
     cy.visit("/hello-world/");
   });
 
