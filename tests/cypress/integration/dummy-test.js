@@ -4,6 +4,6 @@ describe( 'Visit front end', () => {
 	} );
 
 	it( 'Open hello-world', () => {
-		cy.visit( '/hello-world/' )
+		cy.visitAdminPage( 'edit.php' )
 	} );
 } );
