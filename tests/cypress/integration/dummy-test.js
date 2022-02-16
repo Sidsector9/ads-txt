@@ -5,6 +5,7 @@ describe( 'Visit front end', () => {
 
 	it( 'Open hello-world', () => {
 		cy.visitAdminPage( 'edit.php' );
-		cy.visit( '/hello-world' );
+		cy.visit( '/hello-world', { timeout: 3000000 } );
+		cy.wait( 10000 )
 	} );
 } );
